@@ -1,4 +1,4 @@
-class SumOfIntegers {
+public class SumOfIntegers {
     public static void main(String[] args) {
         int n = 253;
         int res = sum(n);

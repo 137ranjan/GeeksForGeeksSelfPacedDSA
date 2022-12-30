@@ -4,7 +4,7 @@
 public class GFG {
 
     public static void main(String[] args) {
-        String str = "ABC";
+        String str = "APPLE";
         String[] s = str.split("");
         permute(s, 0);
     }

@@ -9,11 +9,11 @@ public class Main {
         for(int i=0; i<n; i++){
             arr[i] = input.nextInt();
         }
-		for(int i=0; i<arr.length; i++){
-		    System.out.print(arr[i]+" ");
-		}
-		System.out.println("\n");
-		System.out.println(getWater(arr));
+	for(int i=0; i<arr.length; i++){
+	    System.out.print(arr[i]+" ");
+	}
+	System.out.println("\n");
+	System.out.println(getWater(arr));
     }
     
     private static int getWater(int[] arr){

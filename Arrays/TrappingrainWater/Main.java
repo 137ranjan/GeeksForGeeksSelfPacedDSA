@@ -19,7 +19,7 @@ public class Main {
     private static int getWater(int[] arr){
         int n = arr.length;
         int result = 0;
-	    int[] lMaxArr = new int[n];
+	int[] lMaxArr = new int[n];
         int[] rMaxArr = new int[n];
         
         lMaxArr[0] = arr[0];

@@ -14,6 +14,7 @@ public class Main {
 		}
 		System.out.println("\n");
 		System.out.println(maxProfit(arr,0,n));
+        input.close();
     }
     
     private static int maxProfit(int[] price, int start, int end){

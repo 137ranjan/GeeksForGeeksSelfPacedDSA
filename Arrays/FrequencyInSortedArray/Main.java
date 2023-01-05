@@ -15,6 +15,7 @@ public class Main {
 		}
 		System.out.println("\n");
 		frequency(arr);
+		input.close();
     }
     
     private static void frequency(int[] arr){

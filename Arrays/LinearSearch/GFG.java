@@ -1,7 +1,5 @@
 /*package whatever //do not write package name here */
 
-import java.io.*;
-
 class GFG {
 	public static void main (String[] args) {
 		int[] arr = {1,0,2,9,3,8,4,7,5,6};

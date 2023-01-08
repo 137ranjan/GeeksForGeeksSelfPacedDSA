@@ -34,33 +34,33 @@ public class Main {
     // return false;
     // }
 
-    private static boolean equilibriumPoint2(int[] arr) {
-        int n = arr.length;
-        int[] prefixSum = new int[n];
-        int[] suffixSum = new int[n];
+    // private static boolean equilibriumPoint2(int[] arr) {
+    //     int n = arr.length;
+    //     int[] prefixSum = new int[n];
+    //     int[] suffixSum = new int[n];
 
-        prefixSum[0] = 0;
-        for (int i = 1; i < n; i++) {
-            prefixSum[i] = prefixSum[i - 1] + arr[i];
-        }
+    //     prefixSum[0] = 0;
+    //     for (int i = 1; i < n; i++) {
+    //         prefixSum[i] = prefixSum[i - 1] + arr[i];
+    //     }
 
-        suffixSum[n - 1] = 0;
-        for (int i = n - 2; i >= 0; i--) {
-            suffixSum[i] = suffixSum[i + 1] + arr[i];
-        }
+    //     suffixSum[n - 1] = 0;
+    //     for (int i = n - 2; i >= 0; i--) {
+    //         suffixSum[i] = suffixSum[i + 1] + arr[i];
+    //     }
 
-        if ((prefixSum[n - 2] == 0) || (suffixSum[1] == 0)) {
-            return true;
-        }
-        for (int i = 0; i < n; i++) {
-            if (prefixSum[i] == suffixSum[i]) {
-                return true;
-            }
-        }
+    //     if ((prefixSum[n - 2] == 0) || (suffixSum[1] == 0)) {
+    //         return true;
+    //     }
+    //     for (int i = 0; i < n; i++) {
+    //         if (prefixSum[i] == suffixSum[i]) {
+    //             return true;
+    //         }
+    //     }
 
-        return false;
+    //     return false;
 
-    }
+    // }
 
     private static boolean equilibriumPoint3(int[] arr) {
         int n = arr.length;

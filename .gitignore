@@ -25,3 +25,7 @@
 hs_err_pid*
 Arrays/DyanamicArray
 Arrays/LinearSearch/linearsearch
+
+#intellij
+*.idea/
+*out/

@@ -8,10 +8,10 @@ public class Solution {
 
     private static int countOfOccurrence(int[] arr, int x) {
         int first = indexOfFirstOccurrence(arr, x);
-        if (first == -1){
+        if (first == -1) {
             return 0;
-        }else {
-            return (indexOfLastOccurrence(arr,x) - first + 1);
+        } else {
+            return (indexOfLastOccurrence(arr, x) - first + 1);
         }
     }
 

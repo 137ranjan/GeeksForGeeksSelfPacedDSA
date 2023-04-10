@@ -29,3 +29,6 @@ Arrays/LinearSearch/linearsearch
 #intellij
 *.idea/
 *out/
+
+# binary files
+*.exe

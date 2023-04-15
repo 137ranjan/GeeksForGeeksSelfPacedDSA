@@ -4,14 +4,15 @@ public class Solution {
         int low = 0;
         int high = arr.length - 1;
 
-        lomutoPartition(arr, low, high);
+        int pivotIndex = lomutoPartition(arr, low, high);
+        System.out.println("Pivot Index = " + pivotIndex);
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
         System.out.println(" ");
     }
 
-    private static void lomutoPartition(int[] arr, int low, int high) {
+    private static int lomutoPartition(int[] arr, int low, int high) {
         int pivot = arr[high];
         int i = low - 1;
         for (int j = low; j <= high; j++) {
@@ -26,6 +27,7 @@ public class Solution {
         int temp = arr[i + 1];
         arr[i + 1] = arr[high];
         arr[high] = temp;
+        return i + 1;
     }
 
 }

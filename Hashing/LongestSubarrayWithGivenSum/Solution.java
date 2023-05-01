@@ -24,8 +24,9 @@ public class Solution {
                 if (i - map.get(preSum - sum) > longestSubarr) {
                     longestSubarr = i - map.get(preSum - sum);
                 }
+            } else {
+                map.put(preSum, i);
             }
-            map.put(preSum, i);
         }
         return longestSubarr;
     }

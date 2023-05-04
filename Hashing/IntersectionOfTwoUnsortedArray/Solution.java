@@ -15,6 +15,7 @@ public class Solution {
         for (Integer i : a) {
             if (set.contains(i)) {
                 System.out.println(i);
+                set.remove(i);
             }
         }
     }

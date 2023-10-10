@@ -30,7 +30,6 @@ class GFG {
 	    Node temp = new Node(x);
 	    if(head == null){
 	        temp.next = temp;
-	        return temp;
 	    }else{
 	        Node curr = head;
 	        while(curr.next != head){

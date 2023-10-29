@@ -21,23 +21,13 @@ public class Solution {
                 int op1 = stack.pop();
                 int op2 = stack.pop();
                 switch (ch) {
-                    case '+':
-                        stack.push(op2 + op1);
-                        break;
-                    case '-':
-                        stack.push(op2 - op1);
-                        break;
-                    case '*':
-                        stack.push(op1 * op2);
-                        break;
-                    case '/':
-                        stack.push(op2 / op1);
-                        break;
-                    case '^':
-                        stack.push((int) Math.pow(op2, op1));
-                        break;
-                    default:
-                        break;
+                    case '+' -> stack.push(op2 + op1);
+                    case '-' -> stack.push(op2 - op1);
+                    case '*' -> stack.push(op1 * op2);
+                    case '/' -> stack.push(op2 / op1);
+                    case '^' -> stack.push((int) Math.pow(op2, op1));
+                    default -> {
+                    }
                 }
             }
         }

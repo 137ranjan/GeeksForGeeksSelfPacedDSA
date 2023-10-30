@@ -32,3 +32,6 @@ Arrays/LinearSearch/linearsearch
 
 # binary files
 *.exe
+
+#IntelliJ Module files
+*.iml

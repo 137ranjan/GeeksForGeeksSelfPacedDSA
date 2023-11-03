@@ -1,8 +1,8 @@
 public class Solution {
     public static void main(String[] args) {
         Queue q = new Queue(10);
-        System.out.println("isEmpty():"+q.isEmpty());
-        System.out.println("isFull():"+q.isFull());
+        System.out.println("isEmpty():" + q.isEmpty());
+        System.out.println("isFull():" + q.isFull());
         q.enque(0);
         q.enque(1);
         q.enque(2);
@@ -10,6 +10,8 @@ public class Solution {
         q.enque(4);
         q.enque(5);
         q.deque();
+        System.out.println("front:" + q.getFront());
+        System.out.println("rear:" + q.getRear());
 
     }
 

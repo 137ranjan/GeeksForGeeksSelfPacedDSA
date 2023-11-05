@@ -20,12 +20,14 @@ public class Solution {
     }
 
     private static class Deque {
+        private int front;
         private int size;
-        private final int  cap;
-        private final int[] arr;
+        private int cap;
+        private int[] arr;
 
         public Deque(int cap) {
             this.cap = cap;
+            front = 0;
             size = 0;
             arr = new int[cap];
         }
@@ -38,24 +40,28 @@ public class Solution {
             return (size == 0);
         }
 
+        public void deleteFront() {
+            if (isEmpty()) {
+                return;
+            }
+            front = (front + 1) % cap;
+            size--;
+        }
+
         public void insertRear(int x) {
-            if (!isFull()) {
-                arr[size] = x;
-                size++;
+            if (isFull()) {
+                return;
             }
+            int newRear = (front + size) % cap;
+            arr[newRear] = x;
+            size++;
         }
 
-        public void deleteRear() {
-            if (!isEmpty()) {
-                size--;
-            }
-        }
-
-        public int getRear() {
+        public int getFront() {
             if (isEmpty()) {
                 return -1;
             } else {
-                return arr[size - 1];
+                return front;
             }
         }
 
@@ -63,30 +69,30 @@ public class Solution {
             if (isFull()) {
                 return;
             }
-            for (int i = size - 1; i >= 0; i--) {
-                arr[i + 1] = arr[i];
-            }
-            arr[0] = x;
+            front = (front + cap - 1) % cap;
+            arr[front] = x;
             size++;
         }
 
-        public void deleteFront() {
-            if (isEmpty()) return;
-            for (int i = 0; i < size - 1; i++) {
-                arr[i] = arr[i + 1];
+        public void deleteRear() {
+            if (isEmpty()) {
+                return;
             }
             size--;
         }
 
-        public int getFront() {
-            if (isEmpty()) return -1;
-            else return arr[0];
+        public int getRear() {
+            if (isEmpty()) {
+                return -1;
+            } else {
+                return (front + size - 1) % cap;
+            }
         }
 
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append("[");
-            for (int i = 0; i < size; i++) {
+            sb.append("[ ");
+            for (int i = 0; i < cap; i++) {
                 sb.append(arr[i]);
                 sb.append(" ");
             }

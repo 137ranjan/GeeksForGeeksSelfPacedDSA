@@ -25,6 +25,9 @@ public class Solution {
         }
     }
 
+    // alternative solution: use two stack s1 and s2, put items in s1 in reverse
+    // order first curr.right and then curr.left, put items in correct order in s2,
+    // put children of items in s1 in s2 and vice versa
     private static void spiral(Node root) {
         if (root == null) {
             return;

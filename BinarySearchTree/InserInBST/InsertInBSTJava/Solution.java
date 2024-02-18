@@ -62,8 +62,10 @@ public class Solution {
             parent = curr;
             if (curr.key > x) {
                 curr = curr.left;
-            } else {
+            } else if (curr.key < x) {
                 curr = curr.right;
+            } else {
+                return root;
             }
         }
 

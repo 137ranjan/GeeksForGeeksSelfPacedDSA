@@ -19,6 +19,8 @@ public class Solution {
         System.out.println(minHeap.toString());
         System.out.println(minHeap.extractMin());
         System.out.println(minHeap.toString());
+        minHeap.decreaseKey(5, 15);
+        System.out.println(minHeap.toString());
     }
 
     static class MinHeap {
@@ -89,6 +91,16 @@ public class Solution {
             size--;
             minHeapify(0);
             return arr[size];
+        }
+
+        void decreaseKey(int i, int x) {
+            arr[i] = x;
+            while (i != 0 && arr[parent(i)] > arr[i]) {
+                int temp = arr[parent(i)];
+                arr[parent(i)] = arr[i];
+                arr[i] = temp;
+                i = parent(i);
+            }
         }
 
         int getMin() {

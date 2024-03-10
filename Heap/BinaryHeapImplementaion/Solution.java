@@ -9,6 +9,12 @@ public class Solution {
         minHeap.insert(25);
         minHeap.insert(5);
         minHeap.insert(35);
+
+        System.out.println(minHeap.toString());
+
+        minHeap.arr = new int[] { 40, 20, 30, 35, 25, 80, 32, 100, 70, 60 };
+        System.out.println(minHeap.toString());
+        minHeap.minHeapify(0);
         System.out.println(minHeap.toString());
     }
 
@@ -46,6 +52,24 @@ public class Solution {
                 arr[parent(i)] = arr[i];
                 arr[i] = temp;
                 i = parent(i);
+            }
+        }
+
+        void minHeapify(int i) {
+            int lt = left(i);
+            int rt = right(i);
+            int smallest = i;
+            if (lt < size && arr[lt] < arr[i]) {
+                smallest = lt;
+            }
+            if (rt < size && arr[rt] < arr[smallest]) {
+                smallest = rt;
+            }
+            if (smallest != i) {
+                int temp = arr[i];
+                arr[i] = arr[smallest];
+                arr[smallest] = temp;
+                minHeapify(smallest);
             }
         }
 

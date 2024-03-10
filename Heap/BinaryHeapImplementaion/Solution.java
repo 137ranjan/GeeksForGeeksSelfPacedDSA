@@ -13,8 +13,11 @@ public class Solution {
         System.out.println(minHeap.toString());
 
         minHeap.arr = new int[] { 40, 20, 30, 35, 25, 80, 32, 100, 70, 60 };
+        minHeap.size = 10;
         System.out.println(minHeap.toString());
         minHeap.minHeapify(0);
+        System.out.println(minHeap.toString());
+        System.out.println(minHeap.extractMin());
         System.out.println(minHeap.toString());
     }
 
@@ -71,6 +74,25 @@ public class Solution {
                 arr[smallest] = temp;
                 minHeapify(smallest);
             }
+        }
+
+        int extractMin() {
+            if (size == 0)
+                return Integer.MAX_VALUE;
+            if (size == 1) {
+                size--;
+                return arr[0];
+            }
+            int temp = arr[0];
+            arr[0] = arr[size - 1];
+            arr[size - 1] = temp;
+            size--;
+            minHeapify(0);
+            return arr[size];
+        }
+
+        int getMin() {
+            return arr[0];
         }
 
         public String toString() {

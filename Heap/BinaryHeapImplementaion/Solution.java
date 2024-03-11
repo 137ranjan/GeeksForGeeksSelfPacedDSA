@@ -108,6 +108,12 @@ public class Solution {
             extractMin();
         }
 
+        void buildMinHeap() {
+            for (int i = (size - 2) / 2; i >= 0; i--) {
+                minHeapify(i);
+            }
+        }
+
         int getMin() {
             return arr[0];
         }

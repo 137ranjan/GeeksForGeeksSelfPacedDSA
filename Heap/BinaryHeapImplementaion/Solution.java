@@ -103,6 +103,11 @@ public class Solution {
             }
         }
 
+        void deleteKey(int i) {
+            decreaseKey(i, Integer.MIN_VALUE);
+            extractMin();
+        }
+
         int getMin() {
             return arr[0];
         }

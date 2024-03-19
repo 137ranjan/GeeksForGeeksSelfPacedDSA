@@ -20,13 +20,13 @@ public class Solution {
 
         printGraph(adjacencyList);
 
-        bfs(adjacencyList, 5, 0);
+        bfs(adjacencyList, 4, 0);
 
     }
 
     private static void addEdge(ArrayList<ArrayList<Integer>> adjacencyList, int u, int v) {
         adjacencyList.get(u).add(v);
-        adjacencyList.get(v).add(v);
+        adjacencyList.get(v).add(u);
     }
 
     private static void printGraph(ArrayList<ArrayList<Integer>> adjacencyList) {

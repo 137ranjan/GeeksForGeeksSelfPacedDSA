@@ -57,10 +57,13 @@ public class Solution {
 
     public static void bfsDisconnected(ArrayList<ArrayList<Integer>> adj, int v) {
         boolean[] visited = new boolean[v + 1];
+        int count = 0;
         for (int i = 0; i < v; i++) {
             if (!visited[i]) {
+                count++;
                 bfs(adj, i, visited);
             }
         }
+        System.out.println("\nNo. of connected components: " + count);
     }
 }

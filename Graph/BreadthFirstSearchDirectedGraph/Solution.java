@@ -20,7 +20,7 @@ public class Solution {
 
         printGraph(adj);
 
-        bfsDirected(adj, v);
+        bfsDisconnected(adj, v);
 
     }
 
@@ -55,7 +55,7 @@ public class Solution {
         }
     }
 
-    public static void bfsDirected(ArrayList<ArrayList<Integer>> adj, int v) {
+    public static void bfsDisconnected(ArrayList<ArrayList<Integer>> adj, int v) {
         boolean[] visited = new boolean[v + 1];
         for (int i = 0; i < v; i++) {
             if (!visited[i]) {

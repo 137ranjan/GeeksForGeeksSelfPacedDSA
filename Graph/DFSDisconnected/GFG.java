@@ -17,7 +17,7 @@ class GFG {
 	   
 	   printGraph(adj);
 	   
-	   dfs(adj, v);
+	   dfsDisconnected(adj, v);
 	}
 	
 	private static void printGraph(ArrayList<ArrayList<Integer>> adj){
@@ -47,11 +47,14 @@ class GFG {
 	
 	private static void dfsDisconnected(ArrayList<ArrayList<Integer>> adj, int v){
 	    boolean[] visited = new boolean[v];
+	    int count = 0;
 	    for(int i=0; i<v; i++){
 	        if(visited[i] == false){
+		    count++;
 	            dfsRec(adj, i, visited);
 	        }
 	    }
+	    System.out.println("No. of disconnected graphs: "+count);
 	}
 	
 }

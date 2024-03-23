@@ -16,7 +16,14 @@ public class Solution {
         int s = 0;
         System.out.println("Following are shortest distances " +
                 "from source " + s);
-        System.out.println(Arrays.toString(g.shortestPathInDAG(s)));
+        int[] dist = g.shortestPathInDAG(s);
+        for (int i = 0; i < dist.length; i++) {
+            if(dist[i] == Integer.MAX_VALUE){
+                System.out.print("INF ");
+            }else{
+                System.out.print(dist[i] + " ");
+            }
+        }
     }
 
     public static class AdjListNode {

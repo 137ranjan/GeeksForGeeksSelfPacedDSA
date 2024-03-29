@@ -47,7 +47,7 @@ class Graph {
             int v = graph.edge[j].dest;
             int weight = graph.edge[j].weight;
             if (dist[u] != Integer.MAX_VALUE && dist[u] + weight < dist[v]) {
-                System.out.println("Graph contains negative wieght cycle");
+                System.out.println("Graph contains negative weight cycle");
                 return;
             }
         }

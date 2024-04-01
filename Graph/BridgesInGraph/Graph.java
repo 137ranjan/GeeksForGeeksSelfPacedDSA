@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 
+@SuppressWarnings("unchecked")
 class Graph {
     private int V;
     private LinkedList<Integer> adj[];

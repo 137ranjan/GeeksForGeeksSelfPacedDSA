@@ -12,6 +12,8 @@ public class Solution {
         }
         int result2 = lcsMemoization(s1, s2, s1.length(), s2.length(), memo);
         System.out.println(result2);
+        int result3 = lcsTabulation(s1, s2);
+        System.out.println(result3);
 
     }
 
@@ -29,6 +31,9 @@ public class Solution {
         }
     }
 
+    /*
+     * Memoization solution
+     */
     private static int lcsMemoization(String s1, String s2, int m, int n, int[][] memo) {
         if (memo[m][n] != -1) {
             return memo[m][n];
@@ -41,5 +46,31 @@ public class Solution {
             memo[m][n] = Math.max(lcsMemoization(s1, s2, m - 1, n, memo), lcsMemoization(s1, s2, m, n - 1, memo));
         }
         return memo[m][n];
+    }
+
+    /*
+     * Tabulation Solution
+     */
+    private static int lcsTabulation(String s1, String s2) {
+        int m = s1.length();
+        int n = s2.length();
+        int[][] dp = new int[m + 1][n + 1];
+        for (int i = 0; i <= m; i++) {
+            dp[i][0] = 0;
+        }
+        for (int j = 0; j <= n; j++) {
+            dp[0][j] = 0;
+        }
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
+                    dp[i][j] = 1 + dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+
+        return dp[m][n];
     }
 }

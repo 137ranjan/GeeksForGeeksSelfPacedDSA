@@ -6,7 +6,7 @@ public class Solution {
 
     private static int maxLengthBitonicSubsequence(int[] arr) {
         int n = arr.length;
-        int[] lis = new int[n];    // longest increasing subsequence
+        int[] lis = new int[n]; // longest increasing subsequence
         lis[0] = 1;
         for (int i = 1; i < n; i++) {
             lis[i] = 1;
@@ -17,7 +17,7 @@ public class Solution {
             }
         }
 
-        int[] lds = new int[n]; // longest decreasing subsequence 
+        int[] lds = new int[n]; // longest decreasing subsequence
         lds[n - 1] = 1;
         for (int i = n - 2; i >= 0; i--) {
             lds[i] = 1;

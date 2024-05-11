@@ -3,6 +3,7 @@ public class Solution {
         int[] arr = { 10, 5, 15, 20 };
         System.out.println(maxSum(arr, arr.length));
         System.out.println(maxSumDP(arr, arr.length));
+        System.out.println(maxSumDPSpaceOptimized(arr, arr.length));
     }
 
     // Recursive Solution
@@ -28,5 +29,21 @@ public class Solution {
             dp[i] = Math.max(dp[i - 1], dp[i - 2] + arr[i - 1]);
         }
         return dp[n];
+    }
+
+    // DP Solution: Space Optimized
+    private static int maxSumDPSpaceOptimized(int[] arr, int n) {
+        if (n == 1) {
+            return arr[0];
+        }
+        int prev_prev = arr[0];
+        int prev = Math.max(arr[0], arr[1]);
+        int res = prev;
+        for (int i = 3; i <= n; i++) {
+            res = Math.max(prev, prev_prev + arr[i - 1]);
+            prev_prev = prev;
+            prev = res;
+        }
+        return res;
     }
 }
